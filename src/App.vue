@@ -31,6 +31,7 @@ onMounted(() => {
        The height is set as 100vh minus the height of the header -->
       <div id="calculator" style="width: 100%; height: calc(100vh - 65.25px); margin: 0 auto;">
       </div>
+      <button type="button" class="new-btn" id="newGraph">New graph</button>
     </section>
   </main>
 </template>
@@ -54,8 +55,8 @@ onMounted(() => {
 }
 
 ::selection {
-  background-color: var(--clr-white-1);
-  color: var(--clr-black-2);
+  background-color: var(--clr-text);
+  color: var(--clr-bg);
 }
 
 /* Do not use !important inside layers */
@@ -188,6 +189,26 @@ onMounted(() => {
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
+    }
+  }
+
+  .new-btn {
+    position: absolute;
+    inset: auto 1rem 1rem auto;
+    padding: 0.5em 1em;
+
+    font-size: clamp(1rem, 1.5vw, 2rem);
+    color: var(--clr-bg);
+
+    background-color: var(--clr-text);
+    border-radius: 1rem;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+      background-color: var(--clr-bg);
+      color: var(--clr-text);
+      outline: 2px solid var(--clr-text);
     }
   }
 }
