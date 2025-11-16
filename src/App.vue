@@ -1,6 +1,9 @@
 <script setup lang="ts">
-import { onMounted } from 'vue';
+import { onMounted, ref } from 'vue';
 import { graphs } from './data/graphs';
+import HelpModal from './components/HelpModal.vue';
+
+const showHelp = ref(true);
 
 let targetGraph: string = graphs[0] || 'f(x)=x';
 
@@ -43,13 +46,15 @@ onMounted(() => {
       <h1>functionGuesser <span class="subscript uppercase">/ Guess The Line v2</span></h1>
       <p>Built with &#10084; by <a target="_blank" href="https://github.com/MaadhavBhatt">Maadhav</a></p>
     </header>
+    <HelpModal :isOpen="showHelp" @close="showHelp = false" />
     <section>
       <!-- DO NOT TOUCH
        This calculator has inline styles because applying styles from the component styles was not working as expected.
        The height is set as 100vh minus the height of the header -->
       <div id="calculator" style="width: 100%; height: calc(100vh - 65.25px); margin: 0 auto;">
       </div>
-      <button type="button" class="new-btn" id="newGraph">New graph</button>
+      <button type="button" class="floating-btn new-btn" id="newGraph">New graph</button>
+      <button type="button" class="floating-btn help-btn" @click="showHelp = true">?</button>
     </section>
   </main>
 </template>
@@ -182,6 +187,16 @@ onMounted(() => {
   h1 {
     font-size: clamp(2rem, 5vw, 3rem);
   }
+
+  h2 {
+    font-size: clamp(1.8rem, 4vw, 2.4rem);
+  }
+
+  code {
+    background-color: rgba(0, 0, 0, 0.1);
+    padding-inline: 0.4rem;
+    border-radius: 0.3rem;
+  }
 }
 
 @layer components {
@@ -210,17 +225,12 @@ onMounted(() => {
     }
   }
 
-  .new-btn {
+  .floating-btn {
     position: absolute;
-    inset: auto 1rem 1rem auto;
-    padding: 0.5em 1em;
 
     font-size: clamp(1rem, 1.5vw, 2rem);
     color: var(--clr-bg);
-
     background-color: var(--clr-text);
-    border-radius: 1rem;
-    cursor: pointer;
 
     &:hover,
     &:focus {
@@ -228,6 +238,23 @@ onMounted(() => {
       color: var(--clr-text);
       outline: 2px solid var(--clr-text);
     }
+  }
+
+  .new-btn {
+    inset: auto 1rem 1rem auto;
+    padding: 0.5em 1em;
+
+    border-radius: 1rem;
+    cursor: pointer;
+  }
+
+  .help-btn {
+    inset: auto 1rem 8rem auto;
+    width: 4rem;
+    aspect-ratio: 1 / 1;
+
+    border-radius: 50%;
+    cursor: pointer;
   }
 }
 
