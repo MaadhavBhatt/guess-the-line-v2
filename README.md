@@ -6,10 +6,10 @@ This project will be submitted to [Hack Club](https://hackclub.com/)'s [Midnight
 
 ## How to Suggest a New Graph?
 
-1. Edit the `graphs.md` file in the root directory of the project.
+1. Edit the `/src/data/graphs.ts` file [here](./src/data/graphs.ts).
 2. Add your desired graph equation in the format `f(x)=...` on a new line.
-3. Attach a screenshot of the graph plotted on Desmos for reference.
-4. Make sure to follow the existing formatting and conventions in the file. See format [here]() for reference.
+3. Make sure to follow the existing formatting and conventions in the file. I'll write a formatting guide soon.
+4. Attach a screenshot of the graph plotted on Desmos for reference.
 5. Submit a pull request with your changes.
 
 ### Graph Function Format
