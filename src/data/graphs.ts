@@ -1,0 +1,17 @@
+export const graphs = [
+  'f(x)=x^2 + \\cos(x)',
+  'f(x)=x^{1.5} - 2x + \\sin(x)',
+  'f(x)=x + 0.3*\\sin(x)',
+  'f(x)=\\sin(x) + \\cos(2x)',
+  'f(x)=\\frac{1}{1 + e^{-x}}',
+  'f(x)=\\ln(x + 1) - 0.5x',
+  'f(x)=e^{-0.1x} * \\sin(x)',
+  'f(x)=|x| + 0.2*\\cos(3x)',
+  'f(x)=\\sqrt{x} + \\sin(2x)',
+  'f(x)=x^3 - 3x + \\cos(x)',
+  'f(x)=\\tan^{-1}(x) + 0.1x',
+  'f(x)=\\frac{\\sin(x)}{x + 1}',
+  'f(x)=x^2 * e^{-0.2x} + \\cos(x)',
+  'f(x)=\\log_2(x + 1) + 0.5*\\sin(x)',
+  'f(x)=\\frac{1}{x^2 + 1} + \\sin(3x)',
+]

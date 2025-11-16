@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { onMounted } from 'vue';
+import { graphs } from './data/graphs';
 
-const targetGraph: string = 'f(x)=x^{1.5} - 2x + \\sin(x)';
+let targetGraph: string = graphs[0] || 'f(x)=x';
 
 declare global {
   interface Window {
@@ -12,10 +13,27 @@ declare global {
 
 onMounted(() => {
   const elt = document.getElementById('calculator');
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  let calculator: any = null;
+
   if (elt && window.Desmos) {
-    const calculator = window.Desmos.GraphingCalculator(elt);
+    calculator = window.Desmos.GraphingCalculator(elt);
     calculator.setExpression({ id: 'targetGraph', latex: targetGraph, secret: true });
   }
+
+  document.getElementById('newGraph')?.addEventListener('click', () => {
+    targetGraph = graphs[Math.floor(Math.random() * graphs.length)] || 'f(x)=x';
+    if (calculator) {
+      calculator.setExpression({ id: 'targetGraph', latex: targetGraph, secret: true });
+    } else if (elt && window.Desmos) {
+      // fallback: initialize calculator if it wasn't ready earlier
+      calculator = window.Desmos.GraphingCalculator(elt);
+      calculator.setExpression({ id: 'targetGraph', latex: targetGraph, secret: true });
+    } else {
+      // Desmos not available yet
+      console.warn('Desmos not available to update the graph.');
+    }
+  })
 });
 </script>
 
