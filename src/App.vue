@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { onMounted } from 'vue';
 
-const targetGraph = 'y=x^2 + \\cos(x)';
+const targetGraph = 'f(x)=x^2 + \\cos(x)';
 
 declare global {
   interface Window {
@@ -22,11 +22,8 @@ onMounted(() => {
 <template>
   <main>
     <section class="container">
-      <h1>You did it!</h1>
-      <p>
-        Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the
-        documentation
-      </p>
+      <h1>Guess The Line v2</h1>
+      <p>Built by <a href="https://github.com/MaadhavBhatt">Maadhav</a></p>
     </section>
 
     <section class="container">
@@ -163,8 +160,12 @@ onMounted(() => {
     }
   }
 
+  p {
+    font-size: 2rem;
+  }
+
   h1 {
-    font-size: 10rem;
+    font-size: 6rem;
   }
 }
 </style>
