@@ -1,4 +1,21 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { onMounted } from 'vue';
+
+declare global {
+  interface Window {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    Desmos: any;
+  }
+}
+
+onMounted(() => {
+  const elt = document.getElementById('calculator');
+  if (elt && window.Desmos) {
+    const calculator = window.Desmos.GraphingCalculator(elt);
+    calculator.setExpression({ id: 'graph1', latex: 'y=x^2 + \\cos(x)' });
+  }
+});
+</script>
 
 <template>
   <main>
@@ -8,6 +25,14 @@
         Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the
         documentation
       </p>
+    </section>
+
+    <section class="container">
+      <!-- DO NOT TOUCH
+       This calculator has inline styles because applying styles from the component styles was not working as expected. -->
+      <div id="calculator"
+        style="width: 100%; max-width: 100rem; height: 40rem; margin: 0 auto; border: 2px solid var(--clr-black-2); border-radius: 8px;">
+      </div>
     </section>
   </main>
 </template>
