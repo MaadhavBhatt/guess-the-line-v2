@@ -14,4 +14,11 @@ export const graphs = [
   'f(x)=x^2 * e^{-0.2x} + \\cos(x)',
   'f(x)=\\log_2(x + 1) + 0.5*\\sin(x)',
   'f(x)=\\frac{1}{x^2 + 1} + \\sin(3x)',
+  'f(x)=x^4 - 4x^2 + \\cos(2x)',
+  'f(x)=e^{-0.05x} * (x + \\sin(x))',
+  'f(x)=|\\sin(x)| + 0.3x',
+  'f(x)=\\sqrt{x + 1} - 0.2*\\cos(2x)',
+  'f(x)=x^2 - x + \\sin(4x)',
+  'f(x)=\\frac{\\cos(x)}{x + 2} + x',
+  'f(x)=e^{-0.1x} * \\cos(2x) + x^{3.5}',
 ]
