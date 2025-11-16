@@ -16,10 +16,13 @@ const emit = defineEmits<{
       <ul>
         <li><code>f(x)</code> refers to the mystery function you need to guess.</li>
         <li>Use the "New Graph" button in the bottom right corner to refresh the graph.</li>
+        <li>Add new graphs by adding <a
+            href="https://github.com/MaadhavBhatt/guess-the-line-v2/edit/main/src/data/graphs.ts" target="_blank"
+            rel="noopener">this file</a>.</li>
         <li>
           Visit the
           <a href="https://github.com/MaadhavBhatt/guess-the-line-v2" target="_blank" rel="noopener">GitHub repo</a>
-          for feature requests, PRs, and feedback.
+          for feature requests and feedback.
         </li>
       </ul>
     </div>
