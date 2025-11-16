@@ -21,16 +21,15 @@ onMounted(() => {
 
 <template>
   <main>
-    <section class="container">
-      <h1>Guess The Line v2</h1>
-      <p>Built by <a href="https://github.com/MaadhavBhatt">Maadhav</a></p>
-    </section>
-
-    <section class="container">
+    <header>
+      <h1>functionGuesser <span class="subscript uppercase">/ Guess The Line v2</span></h1>
+      <p>Built with &#10084; by <a target="_blank" href="https://github.com/MaadhavBhatt">Maadhav</a></p>
+    </header>
+    <section>
       <!-- DO NOT TOUCH
-       This calculator has inline styles because applying styles from the component styles was not working as expected. -->
-      <div id="calculator"
-        style="width: 100%; max-width: 100rem; height: 40rem; margin: 0 auto; border: 2px solid var(--clr-black-2); border-radius: 8px;">
+       This calculator has inline styles because applying styles from the component styles was not working as expected.
+       The height is set as 100vh minus the height of the header -->
+      <div id="calculator" style="width: 100%; height: calc(100vh - 65.25px); margin: 0 auto;">
       </div>
     </section>
   </main>
@@ -38,24 +37,29 @@ onMounted(() => {
 
 <style>
 /* Font imports */
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Stack+Sans+Notch:wght@200..700&display=swap');
 
 :root {
-  --font-primary: 'Inter', system-ui, -apple-system, BlinkMacSystemFont,
+  --font-primary: 'Stack Sans Notch', system-ui, -apple-system, BlinkMacSystemFont,
     'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
     'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 
   --clr-black-1: #121212;
   --clr-black-2: #333;
-  --clr-white-1: #eee;
+  --clr-white-1: #fff;
+  --clr-white-2: #eee;
 
-  --clr-text: var(--clr-black-2);
-  --clr-bg: var(--clr-white-1);
+  --clr-text: var(--clr-black-1);
+  --clr-bg: var(--clr-white-2);
+}
+
+::selection {
+  background-color: var(--clr-white-1);
+  color: var(--clr-black-2);
 }
 
 /* Do not use !important inside layers */
-@layer reset, base;
+@layer reset, base, components, utilities;
 
 /* CSS Reset from https://www.joshwcomeau.com/css/custom-css-reset/ */
 @layer reset {
@@ -138,34 +142,66 @@ onMounted(() => {
 
     color: var(--clr-text);
     background-color: var(--clr-bg);
-
-    min-height: 100vh;
-  }
-
-  .container {
-    max-width: 1200px;
-    width: 80%;
-    margin: 0 auto;
-    padding: 2rem;
-    text-align: center;
   }
 
   a {
     text-decoration: underline;
-    color: inherit;
+    color: var(--clr-bg);
+    background-color: var(--clr-text);
 
     &:hover,
     &:focus {
-      color: blue;
+      color: var(--clr-text);
+      background-color: var(--clr-bg);
     }
   }
 
   p {
-    font-size: 2rem;
+    font-size: clamp(1.2rem, 2vw, 2rem);
   }
 
   h1 {
-    font-size: 6rem;
+    font-size: clamp(2rem, 5vw, 3rem);
+  }
+}
+
+@layer components {
+  main {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+  }
+
+  header {
+    background-color: var(--clr-bg);
+    padding: 1rem 2rem;
+
+    text-align: center;
+    letter-spacing: 1.2px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    @media screen and (min-width: 800px) {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+}
+
+@layer utilities {
+  .subscript {
+    font-size: clamp(1rem, 1vw, 1.5rem);
+    vertical-align: sub;
+    color: var(--clr-text);
+    opacity: 0.7;
+  }
+
+  .uppercase {
+    text-transform: uppercase;
   }
 }
 </style>
