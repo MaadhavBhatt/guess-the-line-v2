@@ -1,27 +1,22 @@
-# guess-the-line-v2
+# Guess The Line V2
 
-This template should help get you started developing with Vue 3 in Vite.
+This project builds on the "Guess The Line" concept on the [r/desmos](https://www.reddit.com/r/desmos/) subreddit, where users try to guess a hidden graph based on its equation and [webgoatguy](https://www.youtube.com/@webgoatguy)'s YouTube [video](https://youtu.be/XS9EsvZ1mWY?si=CSSyoSvHGXgMHh5U).
 
-## Recommended IDE Setup
+This project will be submitted to [Hack Club](https://hackclub.com/)'s [Midnight](https://midnight.hackclub.com/) hackathon. If you're a teen interested in coding, check out Hack Club!
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## How to Suggest a New Graph?
 
-## Recommended Browser Setup
+1. Edit the `graphs.md` file in the root directory of the project.
+2. Add your desired graph equation in the format `f(x)=...` on a new line.
+3. Attach a screenshot of the graph plotted on Desmos for reference.
+4. Make sure to follow the existing formatting and conventions in the file. See format [here]() for reference.
+5. Submit a pull request with your changes.
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd) 
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+### Graph Function Format
 
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
+- Use `f(x)=...` format for defining functions.
+- Use '\\' for escaping `cos`, `sin`, `tan`, etc. (e.g., `\\cos(x)`).
+- Ensure the function is compatible with Desmos syntax.
 
 ## Project Setup
 
