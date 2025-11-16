@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { onMounted } from 'vue';
 
+const targetGraph = 'y=x^2 + \\cos(x)';
+
 declare global {
   interface Window {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -12,7 +14,7 @@ onMounted(() => {
   const elt = document.getElementById('calculator');
   if (elt && window.Desmos) {
     const calculator = window.Desmos.GraphingCalculator(elt);
-    calculator.setExpression({ id: 'graph1', latex: 'y=x^2 + \\cos(x)' });
+    calculator.setExpression({ id: 'graph1', latex: targetGraph, secret: true });
   }
 });
 </script>
