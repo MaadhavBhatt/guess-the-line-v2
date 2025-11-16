@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { onMounted } from 'vue';
 
-const targetGraph = 'f(x)=x^2 + \\cos(x)';
+const targetGraph: string = 'f(x)=x^{1.5} - 2x + \\sin(x)';
 
 declare global {
   interface Window {
@@ -14,7 +14,7 @@ onMounted(() => {
   const elt = document.getElementById('calculator');
   if (elt && window.Desmos) {
     const calculator = window.Desmos.GraphingCalculator(elt);
-    calculator.setExpression({ id: 'graph1', latex: targetGraph, secret: true });
+    calculator.setExpression({ id: 'targetGraph', latex: targetGraph, secret: true });
   }
 });
 </script>
