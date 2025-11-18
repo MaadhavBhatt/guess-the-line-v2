@@ -16,6 +16,7 @@ This project will be submitted to [Hack Club](https://hackclub.com/)'s [Midnight
 
 - Use `f(x)=...` format for defining functions.
 - Use '\\' for escaping `cos`, `sin`, `tan`, etc. (e.g., `\\cos(x)`).
+- Use '\\left|' and '\\right|' or `\\operatorname{abs}()` for absolute values (e.g., `\\left|x\\right|`, `\\operatorname{abs}(x)`).
 - Ensure the function is compatible with Desmos syntax.
 
 ## Project Setup
