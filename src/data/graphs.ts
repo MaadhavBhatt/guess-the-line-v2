@@ -21,10 +21,21 @@ export const graphs = [
   'f(x)=x^2 - x + \\sin(4x)',
   'f(x)=\\frac{\\cos(x)}{x + 2} + x',
   'f(x)=e^{-0.1x} * \\cos(2x) + x^{3.5}',
+
   'f(x)=\\log_3(x + 1) + 0.4*\\sin(2x)',
   'f(x)=1/x * \\cos(x)',
   'f(x)=(x + 1)!',
   'f(x)=(0.5x + 1)! + 0.2x',
   'f(x)=\\frac{(x + 2)!}{x + 1} - 0.3*\\sin(x)',
   'f(x)=1/x * \\cos(x) + x!',
+
+  'f(x)=x! - \\frac{x^2}{2} + \\frac{x}{2} - 1',
+  'f(x)=\\operatorname{abs}( 3 \\sin(x) ) + \\operatorname{abs}( \\cos(3x) )',
+  'f(x)=\\sqrt{x^2 + 1} - \\operatorname{abs}(x)',
+  'f(x)=\\frac{x}{1 + \\log_2(\\operatorname{abs}(x) + 1)}',
+  'f(x)=x^{\\cos(x)}',
+  'f(x)=e^{x^2 + x- 6}',
+  'f(x)=e^{-x^2} * \\sin(x)',
+  'f(x)=(\\cos(\\pi * x))^2 * \\cos(x)',
+  'f(x)=x * \\operatorname{abs}( \\sin(x) )',
 ]
