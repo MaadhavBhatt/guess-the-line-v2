@@ -38,4 +38,8 @@ export const graphs = [
   'f(x)=e^{-x^2} * \\sin(x)',
   'f(x)=(\\cos(\\pi * x))^2 * \\cos(x)',
   'f(x)=x * \\operatorname{abs}( \\sin(x) )',
+
+  'f(x)=x^{3} - \\sin( \\operatorname{abs}(\\frac{x}{2}) )',
+  'f(x)=2(x!) + x^{2}',
+  'f(x)=\\frac{\\sin(x + 1)}{2x + 1}',
 ]
