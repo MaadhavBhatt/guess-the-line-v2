@@ -259,7 +259,7 @@ onMounted(() => {
     gap: 1.5rem;
 
     & > button {
-    font-size: clamp(1rem, 1.5vw, 2rem);
+      font-size: clamp(1.5rem, 1.5vw, 2rem);
     color: var(--clr-bg);
     background-color: var(--clr-text);
 
