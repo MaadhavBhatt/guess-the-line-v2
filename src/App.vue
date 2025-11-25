@@ -73,16 +73,12 @@ onMounted(() => {
         id="calculator"
         style="width: 100%; height: calc(100vh - 65.25px); margin: 0 auto"
       ></div>
-      <button type="button" class="floating-btn new-btn" id="newGraph">
-        New graph
-      </button>
-      <button
-        type="button"
-        class="floating-btn help-btn"
-        @click="showHelp = true"
-      >
+      <div class="buttons">
+        <button type="button" class="new-btn" id="newGraph">New graph</button>
+        <button type="button" class="help-btn" @click="showHelp = true">
         ?
       </button>
+      </div>
     </section>
   </main>
 </template>
@@ -253,36 +249,42 @@ onMounted(() => {
     }
   }
 
-  .floating-btn {
+  .buttons {
     position: absolute;
+    inset: auto 1rem 1rem auto;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
 
+    & > button {
     font-size: clamp(1rem, 1.5vw, 2rem);
     color: var(--clr-bg);
     background-color: var(--clr-text);
 
     &:hover,
     &:focus {
-      background-color: var(--clr-bg);
       color: var(--clr-text);
       outline: 2px solid var(--clr-text);
+        background-color: var(--clr-bg);
     }
   }
 
-  .new-btn {
-    inset: auto 1rem 1rem auto;
+    & > .new-btn {
     padding: 0.5em 1em;
 
     border-radius: 1rem;
     cursor: pointer;
   }
 
-  .help-btn {
-    inset: auto 1rem 8rem auto;
-    width: 4rem;
+    & > .help-btn {
+      width: 2em;
     aspect-ratio: 1 / 1;
 
     border-radius: 50%;
     cursor: pointer;
+    }
   }
 }
 
