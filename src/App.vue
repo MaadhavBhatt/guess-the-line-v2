@@ -21,40 +21,68 @@ onMounted(() => {
 
   if (elt && window.Desmos) {
     calculator = window.Desmos.GraphingCalculator(elt);
-    calculator.setExpression({ id: 'targetGraph', latex: targetGraph, secret: true });
+    calculator.setExpression({
+      id: 'targetGraph',
+      latex: targetGraph,
+      secret: true,
+    });
   }
 
   document.getElementById('newGraph')?.addEventListener('click', () => {
     targetGraph = graphs[Math.floor(Math.random() * graphs.length)] || 'f(x)=x';
     if (calculator) {
-      calculator.setExpression({ id: 'targetGraph', latex: targetGraph, secret: true });
+      calculator.setExpression({
+        id: 'targetGraph',
+        latex: targetGraph,
+        secret: true,
+      });
     } else if (elt && window.Desmos) {
       // fallback: initialize calculator if it wasn't ready earlier
       calculator = window.Desmos.GraphingCalculator(elt);
-      calculator.setExpression({ id: 'targetGraph', latex: targetGraph, secret: true });
+      calculator.setExpression({
+        id: 'targetGraph',
+        latex: targetGraph,
+        secret: true,
+      });
     } else {
       // Desmos not available yet
       console.warn('Desmos not available to update the graph.');
     }
-  })
+  });
 });
 </script>
 
 <template>
   <main>
     <header>
-      <h1>functionGuesser <span class="subscript uppercase">/ Guess The Line v2</span></h1>
-      <p>Built with &#10084; by <a target="_blank" href="https://github.com/MaadhavBhatt">Maadhav</a></p>
+      <h1>
+        functionGuesser
+        <span class="subscript uppercase">/ Guess The Line v2</span>
+      </h1>
+      <p>
+        Built with &#10084; by
+        <a target="_blank" href="https://github.com/MaadhavBhatt">Maadhav</a>
+      </p>
     </header>
     <HelpModal :isOpen="showHelp" @close="showHelp = false" />
     <section>
       <!-- DO NOT TOUCH
        This calculator has inline styles because applying styles from the component styles was not working as expected.
        The height is set as 100vh minus the height of the header -->
-      <div id="calculator" style="width: 100%; height: calc(100vh - 65.25px); margin: 0 auto;">
-      </div>
-      <button type="button" class="floating-btn new-btn" id="newGraph">New graph</button>
-      <button type="button" class="floating-btn help-btn" @click="showHelp = true">?</button>
+      <div
+        id="calculator"
+        style="width: 100%; height: calc(100vh - 65.25px); margin: 0 auto"
+      ></div>
+      <button type="button" class="floating-btn new-btn" id="newGraph">
+        New graph
+      </button>
+      <button
+        type="button"
+        class="floating-btn help-btn"
+        @click="showHelp = true"
+      >
+        ?
+      </button>
     </section>
   </main>
 </template>
@@ -64,7 +92,8 @@ onMounted(() => {
 @import url('https://fonts.googleapis.com/css2?family=Stack+Sans+Notch:wght@200..700&display=swap');
 
 :root {
-  --font-primary: 'Stack Sans Notch', system-ui, -apple-system, BlinkMacSystemFont,
+  --font-primary:
+    'Stack Sans Notch', system-ui, -apple-system, BlinkMacSystemFont,
     'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
     'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 
@@ -87,7 +116,6 @@ onMounted(() => {
 
 /* CSS Reset from https://www.joshwcomeau.com/css/custom-css-reset/ */
 @layer reset {
-
   *,
   *::before,
   *::after {

@@ -42,4 +42,4 @@ export const graphs = [
   'f(x)=x^{3} - \\sin( \\operatorname{abs}(\\frac{x}{2}) )',
   'f(x)=2(x!) + x^{2}',
   'f(x)=\\frac{\\sin(x + 1)}{2x + 1}',
-]
+];

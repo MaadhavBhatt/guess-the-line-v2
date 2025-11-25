@@ -1,13 +1,13 @@
 <script setup lang="ts">
-import EmptyModal from './EmptyModal.vue'
+import EmptyModal from './EmptyModal.vue';
 
 defineProps<{
-  isOpen: boolean
-}>()
+  isOpen: boolean;
+}>();
 
 defineEmits<{
-  close: []
-}>()
+  close: [];
+}>();
 </script>
 
 <template>

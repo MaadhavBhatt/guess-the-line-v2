@@ -1,30 +1,30 @@
 <script setup lang="ts">
-import { onUnmounted } from 'vue'
+import { onUnmounted } from 'vue';
 
 defineProps<{
-  isOpen: boolean
-}>()
+  isOpen: boolean;
+}>();
 
 const emit = defineEmits<{
-  close: []
-}>()
+  close: [];
+}>();
 
 // Close modal on Escape key press
 const handleKeydown = (event: KeyboardEvent) => {
   if (event.key === 'Escape') {
-    emit('close')
+    emit('close');
   }
-}
-window.addEventListener('keydown', handleKeydown)
+};
+window.addEventListener('keydown', handleKeydown);
 
 // Close modal on clicking outside the modal content / clicking on the overlay
 document.querySelector('.modal-overlay')?.addEventListener('click', () => {
-  emit('close')
-})
+  emit('close');
+});
 
 onUnmounted(() => {
-  window.removeEventListener('keydown', handleKeydown)
-})
+  window.removeEventListener('keydown', handleKeydown);
+});
 </script>
 
 <template>
