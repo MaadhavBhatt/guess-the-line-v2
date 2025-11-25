@@ -76,8 +76,8 @@ onMounted(() => {
       <div class="buttons">
         <button type="button" class="new-btn" id="newGraph">New graph</button>
         <button type="button" class="help-btn" @click="showHelp = true">
-        ?
-      </button>
+          ?
+        </button>
       </div>
     </section>
   </main>
@@ -260,30 +260,30 @@ onMounted(() => {
 
     & > button {
       font-size: clamp(1.5rem, 1.5vw, 2rem);
-    color: var(--clr-bg);
-    background-color: var(--clr-text);
+      color: var(--clr-bg);
+      background-color: var(--clr-text);
 
-    &:hover,
-    &:focus {
-      color: var(--clr-text);
-      outline: 2px solid var(--clr-text);
+      &:hover,
+      &:focus {
+        color: var(--clr-text);
+        outline: 2px solid var(--clr-text);
         background-color: var(--clr-bg);
+      }
     }
-  }
 
     & > .new-btn {
-    padding: 0.5em 1em;
+      padding: 0.5em 1em;
 
-    border-radius: 1rem;
-    cursor: pointer;
-  }
+      border-radius: 1rem;
+      cursor: pointer;
+    }
 
     & > .help-btn {
       width: 2em;
-    aspect-ratio: 1 / 1;
+      aspect-ratio: 1 / 1;
 
-    border-radius: 50%;
-    cursor: pointer;
+      border-radius: 50%;
+      cursor: pointer;
     }
   }
 }
