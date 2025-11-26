@@ -14,6 +14,8 @@ declare global {
   }
 }
 
+function handleSubmit() {}
+
 onMounted(() => {
   const elt = document.getElementById('calculator');
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -74,7 +76,10 @@ onMounted(() => {
         style="width: 100%; height: calc(100vh - 65.25px); margin: 0 auto"
       ></div>
       <div class="buttons">
-        <button type="button" class="new-btn" id="newGraph">New graph</button>
+        <button type="button" class="text-btn" id="newGraph">New graph</button>
+        <button type="button" class="text-btn" @click="handleSubmit">
+          Submit
+        </button>
         <button type="button" class="help-btn" @click="showHelp = true">
           ?
         </button>
@@ -271,7 +276,7 @@ onMounted(() => {
       }
     }
 
-    & > .new-btn {
+    & > .text-btn {
       padding: 0.5em 1em;
 
       border-radius: 1rem;
